@@ -1,8 +1,8 @@
 {
-    "name"        : "Adamlc/AddressFormat",
+    "name"        : "adamlc/address-format",
     "type"        : "library",
     "description" : "A PHP library to parse street addresses to localized formats",
-    "homepage"    : "https://github.com/adamlc/AddressFormat",
+    "homepage"    : "https://github.com/adamlc/address-format",
     "license"     : "MIT",
 
     "require" : {
