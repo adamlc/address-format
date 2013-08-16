@@ -1,5 +1,6 @@
 Address Format [![Build Status](https://travis-ci.org/adamlc/AddressFormat.png?branch=master)](https://travis-ci.org/adamlc/AddressFormat)
 =============
+[![Latest Stable Version](https://poser.pugx.org/adamlc/address-format/v/stable.png)](https://packagist.org/packages/adamlc/address-format) [![Total Downloads](https://poser.pugx.org/adamlc/address-format/downloads.png)](https://packagist.org/packages/adamlc/address-format)
 
 A PHP library to parse street addresses to localized formats. The address formats are based on the formats supplied by Google's libaddressinput.
 
@@ -57,12 +58,12 @@ Note: Look in the i18n directory to view the meta data for the locales.
 
 The following attributes are available:
 
-ADMIN_AREA
-LOCALITY
-RECIPIENT
-ORGANIZATION
-DEPENDENT_LOCALITY
-POSTAL_CODE
-SORTING_CODE
-STREET_ADDRESS
-COUNTRY
+ADMIN_AREA  
+LOCALITY  
+RECIPIENT  
+ORGANIZATION  
+DEPENDENT_LOCALITY  
+POSTAL_CODE  
+SORTING_CODE  
+STREET_ADDRESS  
+COUNTRY  
