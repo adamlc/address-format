@@ -1,0 +1,1 @@
+{"upper": "ACNOS", "zipex": "96940", "name": "PALAU", "zip": "969(39|40)", "zip_name_type": "zip", "require": "ACSZ", "fmt": "%N%n%O%n%A%n%C %S %Z", "state_name_type": "state", "key": "PW", "posturl": "http://zip4.usps.com/zip4/welcome.jsp", "id": "data/PW"}

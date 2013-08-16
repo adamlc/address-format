@@ -1,0 +1,1 @@
+{"upper": "CS", "name": "FRENCH POLYNESIA", "zip": "987\\d{2}", "require": "ACSZ", "fmt": "%N%n%O%n%A%n%Z %C %S", "state_name_type": "island", "key": "PF", "id": "data/PF"}

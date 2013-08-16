@@ -1,0 +1,1 @@
+{"zipex": "50100,50101", "name": "ZAMBIA", "zip": "\\d{5}", "require": "AC", "id": "data/ZM", "key": "ZM", "fmt": "%N%n%O%n%A%n%Z %C"}

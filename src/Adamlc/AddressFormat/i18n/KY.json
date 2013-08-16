@@ -1,0 +1,1 @@
+{"lang": "en", "zipex": "KY1-1100,KY1-1702,KY2-2101", "name": "CAYMAN ISLANDS", "zip": "KY\\d-\\d{4}", "require": "AS", "fmt": "%N%n%O%n%A%n%S", "state_name_type": "island", "languages": "en", "sub_keys": "CAYMAN BRAC~GRAND CAYMAN~LITTLE CAYMAN", "key": "KY", "posturl": "http://www.caymanpost.gov.ky/portal/page?_pageid=3561,1&_dad=portal&_schema=PORTAL", "id": "data/KY"}

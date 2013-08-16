@@ -1,0 +1,1 @@
+{"upper": "ACX", "zipex": "97300", "name": "FRENCH GUIANA", "zip": "9[78]3\\d{2}", "require": "ACZ", "fmt": "%O%n%N%n%A%n%Z %C %X", "key": "GF", "posturl": "http://www.laposte.fr/sna/rubrique.php3?id_rubrique=59", "id": "data/GF"}

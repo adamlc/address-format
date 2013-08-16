@@ -1,0 +1,1 @@
+{"zipex": "LIMA 23,LIMA 42,CALLAO 2,02001", "posturl": "http://www.serpost.com.pe/cpostal/codigo", "zip": "(?:LIMA \\d|CALLAO 0?)\\d|[0-2]\\d{4}", "key": "PE", "id": "data/PE", "name": "PERU"}

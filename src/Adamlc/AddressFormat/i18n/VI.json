@@ -1,0 +1,1 @@
+{"upper": "ACNOS", "zipex": "00802-1222,00850-9802", "name": "VIRGIN ISLANDS (U.S.)", "zip": "008(([0-4]\\d)|(5[01]))([ \\-]\\d{4})?", "zip_name_type": "zip", "require": "ACSZ", "fmt": "%N%n%O%n%A%n%C %S %Z", "state_name_type": "state", "key": "VI", "posturl": "http://zip4.usps.com/zip4/welcome.jsp", "id": "data/VI"}

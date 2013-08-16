@@ -1,0 +1,1 @@
+{"lang": "pt", "zipex": "7600", "name": "CAPE VERDE", "zip": "\\d{4}", "fmt": "%N%n%O%n%A%n%Z %C%n%S", "state_name_type": "island", "languages": "pt", "sub_keys": "BOA VISTA~BRAVA~FOGO~MAIO~SAL~SANTIAGO~SANTO ANTÃO~SÃO NICOLAU~SÃO VICENTE", "key": "CV", "sub_isoids": "BV~BR~~MA~SL~~~SN~SV", "id": "data/CV"}
