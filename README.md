@@ -37,7 +37,7 @@ $address_formatter->setAttribute('STREET_ADDRESS', '173-185 Greenwich High Road'
 $address_formatter->setAttribute('COUNTRY', 'United Kingdom');
 
 //Get the address in localised format
-echo $this->container->formatAddress();
+echo $address_formatter->formatAddress();
 ```
 
 
