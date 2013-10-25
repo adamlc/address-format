@@ -1,4 +1,4 @@
-Address Format [![Build Status](https://travis-ci.org/adamlc/AddressFormat.png?branch=master)](https://travis-ci.org/adamlc/AddressFormat)
+Address Format [![Build Status](https://travis-ci.org/adamlc/address-format.png?branch=master)](https://travis-ci.org/adamlc/address-format)
 =============
 [![Latest Stable Version](https://poser.pugx.org/adamlc/address-format/v/stable.png)](https://packagist.org/packages/adamlc/address-format) [![Total Downloads](https://poser.pugx.org/adamlc/address-format/downloads.png)](https://packagist.org/packages/adamlc/address-format)
 
