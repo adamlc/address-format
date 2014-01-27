@@ -1,5 +1,8 @@
-<?php
+<?php namespace Adamlc\AddressFormat\Exceptions;
 
-namespace Adamlc\AddressFormat\Exceptions;
+use RuntimeException;
 
-class LocaleNotSupportedException extends \RuntimeException {}
+class LocaleNotSupportedException extends RuntimeException
+{
+
+}
