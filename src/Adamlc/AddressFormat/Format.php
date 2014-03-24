@@ -88,9 +88,10 @@ class Format
      *
      * @access public
      * @param  bool $html (default: false)
+     * @param  bool $condensed (default: false)
      * @return void
      */
-    public function formatAddress($html = false)
+    public function formatAddress($html = false, $condensed = false)
     {
         //Check if this locale has a fmt field
         if (isset($this->locale['fmt'])) {
@@ -102,6 +103,11 @@ class Format
             //Replace the street values
             foreach ($this->address_map as $key => $value) {
                 $formatted_address = str_replace('%' . $key, $this->input_map[$value], $formatted_address);
+            }
+            
+            //Optionally remove blank lines from the resulting address
+            if ($condensed){
+                $formatted_address = preg_replace('([\%n]+)', '%n', $formatted_address);
             }
 
             //Replace new lines!
