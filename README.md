@@ -38,7 +38,7 @@ $address_formatter->setAttribute('COUNTRY', 'United Kingdom');
 
 //Get the address in localised format
 $html = true; // Optional - return the address in HTML <br> instead of \n new lines
-$condensed = true; Optional - remove any blank lines in the returned address
+$condensed = true; // Optional - remove any blank lines in the returned address
 echo $address_formatter->formatAddress($html, $condensed);
 ```
 
