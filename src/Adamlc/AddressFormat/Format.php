@@ -107,7 +107,7 @@ class Format
             
             //Optionally remove blank lines from the resulting address
             if ($condensed){
-                $formatted_address = preg_replace('([\%n]+)', '%n', $formatted_address);
+                $formatted_address = preg_replace('((\%n)+)', '%n', $formatted_address);
             }
 
             //Replace new lines!
