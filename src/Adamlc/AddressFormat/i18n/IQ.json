@@ -1,1 +1,1 @@
-{"upper": "CS", "name": "IRAQ", "zip": "\\d{5}", "require": "ACS", "fmt": "%O%n%N%n%A%n%C, %S%n%Z", "key": "IQ", "id": "data/IQ"}
+{"upper": "CS", "name": "IRAQ", "zip": "\\d{5}", "fmt": "%O%n%N%n%A%n%C, %S%n%Z", "id": "data/IQ", "key": "IQ", "require": "ACS"}

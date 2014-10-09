@@ -1,1 +1,1 @@
-{"upper": "ACX", "zipex": "98600", "name": "WALLIS AND FUTUNA ISLANDS", "zip": "986\\d{2}", "require": "ACZ", "fmt": "%O%n%N%n%A%n%Z %C %X", "key": "WF", "id": "data/WF"}
+{"upper": "ACX", "zipex": "98600", "name": "WALLIS AND FUTUNA ISLANDS", "zip": "986\\d{2}", "fmt": "%O%n%N%n%A%n%Z %C %X", "id": "data/WF", "key": "WF", "require": "ACZ"}

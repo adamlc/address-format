@@ -1,1 +1,1 @@
-{"key": "TZ", "zipex": "6090", "id": "data/TZ", "zip": "\\d{4}", "name": "TANZANIA (UNITED REP.)"}
+{"zip": "\\d{4}", "zipex": "6090", "id": "data/TZ", "key": "TZ", "name": "TANZANIA (UNITED REP.)"}

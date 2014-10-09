@@ -1,1 +1,1 @@
-{"upper": "CZ", "zipex": "FIQQ 1ZZ", "name": "FALKLAND ISLANDS (MALVINAS)", "zip": "FIQQ 1ZZ", "require": "ACZ", "fmt": "%N%n%O%n%A%n%X%n%C%n%Z", "key": "FK", "id": "data/FK"}
+{"upper": "CZ", "zipex": "FIQQ 1ZZ", "name": "FALKLAND ISLANDS (MALVINAS)", "zip": "FIQQ 1ZZ", "fmt": "%N%n%O%n%A%n%X%n%C%n%Z", "id": "data/FK", "key": "FK", "require": "ACZ"}

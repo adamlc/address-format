@@ -1,1 +1,1 @@
-{"upper": "CZ", "zipex": "SIQQ 1ZZ", "name": "SOUTH GEORGIA", "zip": "SIQQ 1ZZ", "require": "ACZ", "fmt": "%N%n%O%n%A%n%X%n%C%n%Z", "key": "GS", "id": "data/GS"}
+{"upper": "CZ", "zipex": "SIQQ 1ZZ", "name": "SOUTH GEORGIA", "zip": "SIQQ 1ZZ", "fmt": "%N%n%O%n%A%n%X%n%C%n%Z", "id": "data/GS", "key": "GS", "require": "ACZ"}

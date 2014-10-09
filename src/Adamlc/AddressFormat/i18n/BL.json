@@ -1,1 +1,1 @@
-{"upper": "ACX", "zipex": "97100", "name": "SAINT BARTHELEMY", "zip": "9[78][01]\\d{2}", "require": "ACZ", "fmt": "%O%n%N%n%A%n%Z %C %X", "key": "BL", "posturl": "http://www.laposte.fr/sna/rubrique.php3?id_rubrique=59", "id": "data/BL"}
+{"upper": "ACX", "zipex": "97100", "name": "SAINT BARTHELEMY", "zip": "9[78][01]\\d{2}", "fmt": "%O%n%N%n%A%n%Z %C %X", "id": "data/BL", "key": "BL", "posturl": "http://www.laposte.fr/Particulier/Utiliser-nos-outils-pratiques/Outils-et-documents/Trouvez-un-code-postal", "require": "ACZ"}

@@ -1,1 +1,1 @@
-{"zipex": "11903,10101", "posturl": "http://inposdom.gob.do/servicios/codigo-postal.html#buscar_codigo", "zip": "\\d{5}", "fmt": "%N%n%O%n%A%n%Z %C", "key": "DO", "id": "data/DO", "name": "DOMINICAN REP."}
+{"zipex": "11903,10101", "name": "DOMINICAN REP.", "zip": "\\d{5}", "fmt": "%N%n%O%n%A%n%Z %C", "key": "DO", "posturl": "http://inposdom.gob.do/servicios/codigo-postal.html#buscar_codigo", "id": "data/DO"}
