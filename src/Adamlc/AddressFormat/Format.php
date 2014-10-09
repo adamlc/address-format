@@ -5,6 +5,7 @@ namespace Adamlc\AddressFormat;
 use Adamlc\AddressFormat\Exceptions\AttributeInvalidException;
 use Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException;
 use Adamlc\AddressFormat\Exceptions\LocaleParseErrorException;
+use Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException;
 
 /**
  * Use this call to format a street address according to different locales
@@ -104,7 +105,7 @@ class Format
             foreach ($this->address_map as $key => $value) {
                 $formatted_address = str_replace('%' . $key, $this->input_map[$value], $formatted_address);
             }
-            
+
             //Optionally remove blank lines from the resulting address
             if ($condensed){
                 $formatted_address = preg_replace('((\%n)+)', '%n', $formatted_address);
@@ -119,7 +120,7 @@ class Format
 
             return $formatted_address;
         } else {
-            throw new LocaleNotSupportedException('Locale not supported by this library');
+            throw new LocaleMissingFormatException('Locale missing format');
         }
     }
 

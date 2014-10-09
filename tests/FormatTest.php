@@ -154,4 +154,41 @@ class FormatTest extends \PHPUnit_Framework_TestCase
 			"Eberhard Wellhausen\nWittekindshof\nSchulstrasse 4\n32547 Oyenhausen"
 		);
     }
+
+    /**
+     * Check that an exception is thrown for invlidate locale
+     *
+     * @expectedException Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException
+     * @return void
+     */
+    public function testUnsupportedLocaleThrowsException()
+    {
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
+
+        //Set Locale
+        $this->container->setLocale('XX');
+
+        //Set expected Exception
+        $this->setExpectedException('Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException');
+
+        $this->container->formatAddress();
+    }
+
+    /**
+     * Check that an exception is thrown for invlidate locale
+     *
+     * @expectedException Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException
+     * @return void
+     */
+    public function testNotGivenFormatThrowsException()
+    {
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
+
+        //Set expected Exception
+        $this->setExpectedException('Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException');
+
+        $this->container->formatAddress();
+    }
 }
