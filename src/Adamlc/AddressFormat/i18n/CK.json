@@ -1,1 +1,1 @@
-{"key": "CK", "fmt": "%N%n%O%n%A%n%C %Z", "id": "data/CK", "zip": "\\d{4}", "name": "COOK ISLANDS"}
+{"fmt": "%N%n%O%n%A%n%C %Z", "zip": "\\d{4}", "id": "data/CK", "key": "CK", "name": "COOK ISLANDS"}

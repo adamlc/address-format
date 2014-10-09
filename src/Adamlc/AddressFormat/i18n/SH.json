@@ -1,1 +1,1 @@
-{"upper": "CZ", "zipex": "STHL 1ZZ", "name": "SAINT HELENA", "zip": "(ASCN|STHL) 1ZZ", "require": "ACZ", "fmt": "%N%n%O%n%A%n%X%n%C%n%Z", "key": "SH", "id": "data/SH"}
+{"upper": "CZ", "zipex": "STHL 1ZZ", "name": "SAINT HELENA", "zip": "(ASCN|STHL) 1ZZ", "fmt": "%N%n%O%n%A%n%X%n%C%n%Z", "id": "data/SH", "key": "SH", "require": "ACZ"}

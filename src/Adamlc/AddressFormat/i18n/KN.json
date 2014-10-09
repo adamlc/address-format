@@ -1,1 +1,1 @@
-{"lang": "en", "name": "SAINT KITTS AND NEVIS", "require": "ACS", "fmt": "%N%n%O%n%A%n%C, %S", "state_name_type": "island", "languages": "en", "sub_keys": "NEVIS~ST. KITTS", "key": "KN", "sub_isoids": "N~K", "id": "data/KN"}
+{"lang": "en", "name": "SAINT KITTS AND NEVIS", "fmt": "%N%n%O%n%A%n%C, %S", "require": "ACS", "state_name_type": "island", "languages": "en", "sub_keys": "Nevis~St. Kitts", "key": "KN", "sub_isoids": "N~K", "id": "data/KN"}
