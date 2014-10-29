@@ -125,6 +125,19 @@ class Format
     }
 
     /**
+     * Sets multiple address attributes.
+     *
+     * @access public
+     * @param  mixed  $attributes
+     * @return void
+     */
+    public function setAttributs($attributes) {
+        foreach ($attributes as $key => $value) {
+            $this->setAttribute($key, $value);
+        }
+    }
+
+    /**
      * Set an address attribute.
      *
      * @access public
