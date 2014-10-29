@@ -12,7 +12,7 @@ use Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException;
  */
 class Format
 {
-    private $locale;
+	protected $locale;
 
     /**
      * This map specifies the content on how to format the address
@@ -22,9 +22,9 @@ class Format
      * /src/com/android/i18n/addressinput/AddressField.java?r=111
      *
      * @var mixed
-     * @access private
+     * @access protected
      */
-    private $address_map = array(
+    protected $address_map = array(
         'S' => 'ADMIN_AREA', //state
         'C' => 'LOCALITY', //city
         'N' => 'RECIPIENT', //name
@@ -42,9 +42,9 @@ class Format
      * The input map will hold all the information we put in to the class
      *
      * @var mixed
-     * @access private
+     * @access protected
      */
-    private $input_map = array(
+	protected $input_map = array(
         'ADMIN_AREA' => '', //state
         'LOCALITY' => '', //city
         'RECIPIENT' => '', //name
