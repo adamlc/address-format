@@ -131,7 +131,7 @@ class Format
      * @param  mixed  $attributes
      * @return void
      */
-    public function setAttributs($attributes) {
+    public function setAttributes($attributes) {
         foreach ($attributes as $key => $value) {
             $this->setAttribute($key, $value);
         }
