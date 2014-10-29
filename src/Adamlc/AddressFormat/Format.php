@@ -68,7 +68,7 @@ class Format
     public function setLocale($locale)
     {
         //Check if we have information for this locale
-        $file = __DIR__ . '/i18n/' . $locale . '.json';
+        $file = __DIR__ . '/i18n/' . strtoupper($locale) . '.json';
         if (file_exists($file)) {
             //Read the locale information from the file
             $meta = json_decode(file_get_contents($file), true);
@@ -117,7 +117,6 @@ class Format
             } else {
                 $formatted_address = str_replace('%n', "\n", $formatted_address);
             }
-
             return $formatted_address;
         } else {
             throw new LocaleMissingFormatException('Locale missing format');
