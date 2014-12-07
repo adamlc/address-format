@@ -8,4 +8,8 @@ php:
   - hhvm
 
 install:
+  - pyrus install pear/PHP_CodeSniffer
+  - phpenv rehash
+  - phpcs --standard=PSR2 src/
+
   - composer install
