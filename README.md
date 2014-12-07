@@ -28,13 +28,13 @@ $address_formatter = new Adamlc\AddressFormat\Format;
 $address_formatter->setLocale('GB');
 
 //Set the address parts / attributes
-$address_formatter->setAttribute('ADMIN_AREA', 'London');
-$address_formatter->setAttribute('LOCALITY', 'Greenwich');
-$address_formatter->setAttribute('RECIPIENT', 'Joe Bloggs');
-$address_formatter->setAttribute('ORGANIZATION', 'Novotel London');
-$address_formatter->setAttribute('POSTAL_CODE', 'SE10 8JA');
-$address_formatter->setAttribute('STREET_ADDRESS', '173-185 Greenwich High Road');
-$address_formatter->setAttribute('COUNTRY', 'United Kingdom');
+$address_formatter['ADMIN_AREA'] = 'London';
+$address_formatter['LOCALITY'] = 'Greenwich';
+$address_formatter['RECIPIENT'] = 'Joe Bloggs';
+$address_formatter['ORGANIZATION'] = 'Novotel London';
+$address_formatter['POSTAL_CODE'] = 'SE10 8JA';
+$address_formatter['STREET_ADDRESS'] = '173-185 Greenwich High Road';
+$address_formatter['COUNTRY'] = 'United Kingdom';
 
 //Get the address in localised format
 $html = true; // Optional - return the address in HTML <br> instead of \n new lines

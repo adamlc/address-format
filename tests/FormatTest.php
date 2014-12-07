@@ -191,4 +191,46 @@ class FormatTest extends \PHPUnit_Framework_TestCase
 
         $this->container->formatAddress();
     }
+    
+    /**
+     * Test setting attributes using array access
+     *
+     * @return void
+     */
+    public function testArrayAccess()
+    {
+    	//Clear any previously set attributes
+    	$this->container->clearAttributes();
+
+		$this->container['LOCALITY'] = 'Oyenhausen';
+		$this->container['RECIPIENT'] = 'Eberhard Wellhausen';
+		$this->container['ORGANIZATION'] = 'Wittekindshof';
+		$this->container['POSTAL_CODE'] = '32547';
+		$this->container['STREET_ADDRESS'] = 'Schulstrasse 4';
+
+		$this->assertEquals(
+			$this->container['LOCALITY'],
+			'Oyenhausen'
+		);
+		
+		$this->assertEquals(
+			$this->container['RECIPIENT'],
+			'Eberhard Wellhausen'
+		);
+		
+		$this->assertEquals(
+			$this->container['ORGANIZATION'],
+			'Wittekindshof'
+		);
+		
+		$this->assertEquals(
+			$this->container['POSTAL_CODE'],
+			'32547'
+		);
+		
+		$this->assertEquals(
+			$this->container['STREET_ADDRESS'],
+			'Schulstrasse 4'
+		);
+    }
 }

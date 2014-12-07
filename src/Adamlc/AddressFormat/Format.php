@@ -10,7 +10,7 @@ use Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException;
 /**
  * Use this call to format a street address according to different locales
  */
-class Format
+class Format implements \ArrayAccess
 {
     private $locale;
 
@@ -29,12 +29,10 @@ class Format
         'C' => 'LOCALITY', //city
         'N' => 'RECIPIENT', //name
         'O' => 'ORGANIZATION', //organization
-        '1' => 'ADDRESS_LINE_1', //street1
-        '2' => 'ADDRESS_LINE_2', //street1
         'D' => 'DEPENDENT_LOCALITY',
         'Z' => 'POSTAL_CODE',
         'X' => 'SORTING_CODE',
-        'A' => 'STREET_ADDRESS', //Deprecated
+        'A' => 'STREET_ADDRESS',
         'R' => 'COUNTRY'
     );
 
@@ -107,7 +105,7 @@ class Format
             }
 
             //Optionally remove blank lines from the resulting address
-            if ($condensed){
+            if ($condensed) {
                 $formatted_address = preg_replace('((\%n)+)', '%n', $formatted_address);
             }
 
@@ -171,6 +169,28 @@ class Format
     {
         foreach ($this->input_map as $key => $value) {
             $this->input_map[$key] = '';
+        }
+    }
+    
+    public function offsetExists($offset)
+    {
+        return isset($this->input_map[$offset]);
+    }
+    
+    public function offsetGet($offset)
+    {
+        return $this->getAttribute($offset);
+    }
+    
+    public function offsetSet($offset, $value)
+    {
+        $this->setAttribute($offset, $value);
+    }
+    
+    public function offsetUnset($offset)
+    {
+        if ($this->offsetExists($offset)) {
+            $this->offsetSet($offset, '');
         }
     }
 }
