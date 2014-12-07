@@ -6,7 +6,7 @@ Address Format
 [![Build Status](https://img.shields.io/travis/adamlc/address-format/master.svg?style=flat-square)](https://travis-ci.org/adamlc/address-format)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/adamlc/address-format.svg?style=flat-square)](https://scrutinizer-ci.com/g/adamlc/address-format/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/adamlc/address-format.svg?style=flat-square)](https://scrutinizer-ci.com/g/adamlc/address-format)
-[![Total Downloads](https://img.shields.io/packagist/dt/league/fractal.svg?style=flat-square)](https://packagist.org/packages/league/fractal)
+[![Total Downloads](https://img.shields.io/packagist/dt/adamlc/address-format.svg?style=flat-square)](https://packagist.org/packages/adamlc/address-format)
 
 A PHP library to parse street addresses to localized formats. The address formats are based on the formats supplied by Google's libaddressinput.
 
