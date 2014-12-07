@@ -1,6 +1,12 @@
-Address Format [![Build Status](https://travis-ci.org/adamlc/address-format.png?branch=master)](https://travis-ci.org/adamlc/address-format)
+Address Format
 =============
-[![Latest Stable Version](https://poser.pugx.org/adamlc/address-format/v/stable.png)](https://packagist.org/packages/adamlc/address-format) [![Total Downloads](https://poser.pugx.org/adamlc/address-format/downloads.png)](https://packagist.org/packages/adamlc/address-format)
+
+[![Latest Version](https://img.shields.io/github/release/adamlc/address-format.svg?style=flat-square)](https://github.com/adamlc/address-format/releases)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/travis/adamlc/address-format/master.svg?style=flat-square)](https://travis-ci.org/adamlc/address-format)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/adamlc/address-format.svg?style=flat-square)](https://scrutinizer-ci.com/g/adamlc/address-format/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/adamlc/address-format.svg?style=flat-square)](https://scrutinizer-ci.com/g/adamlc/address-format)
+[![Total Downloads](https://img.shields.io/packagist/dt/league/fractal.svg?style=flat-square)](https://packagist.org/packages/league/fractal)
 
 A PHP library to parse street addresses to localized formats. The address formats are based on the formats supplied by Google's libaddressinput.
 
