@@ -12,7 +12,7 @@ I have written a few basic unit tests, but they could probably be improved. Feel
 To install AddressFormat as a Composer package add this to your composer.json:
 
 ```json
-"adamlc/address-format": "~1.1.0"
+"adamlc/address-format": "~1.2"
 ```
 
 Run `composer update`
