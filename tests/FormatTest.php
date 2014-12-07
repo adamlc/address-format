@@ -5,7 +5,7 @@ use Adamlc\AddressFormat\Format;
 class FormatTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Container
+     * @var Adamlc\AddressFormat\Format
      */
     protected $container;
 
