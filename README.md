@@ -1,7 +1,7 @@
 Address Format
 =============
 
-[![Latest Version](https://img.shields.io/github/release/adamlc/address-format.svg?style=flat-square)](https://github.com/adamlc/address-format/releases)
+[![Latest Version](https://img.shields.io/github/tag/adamlc/address-format.svg?label=release&style=flat-square)](https://github.com/adamlc/address-format/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://img.shields.io/travis/adamlc/address-format/master.svg?style=flat-square)](https://travis-ci.org/adamlc/address-format)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/adamlc/address-format.svg?style=flat-square)](https://scrutinizer-ci.com/g/adamlc/address-format/code-structure)
