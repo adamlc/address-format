@@ -12,7 +12,7 @@ use Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException;
  */
 class Format implements \ArrayAccess
 {
-    private $locale;
+	protected $locale;
 
     /**
      * This map specifies the content on how to format the address
@@ -22,9 +22,9 @@ class Format implements \ArrayAccess
      * /src/com/android/i18n/addressinput/AddressField.java?r=111
      *
      * @var mixed
-     * @access private
+     * @access protected
      */
-    private $address_map = array(
+    protected $address_map = array(
         'S' => 'ADMIN_AREA', //state
         'C' => 'LOCALITY', //city
         'N' => 'RECIPIENT', //name
@@ -40,9 +40,9 @@ class Format implements \ArrayAccess
      * The input map will hold all the information we put in to the class
      *
      * @var mixed
-     * @access private
+     * @access protected
      */
-    private $input_map = array(
+	protected $input_map = array(
         'ADMIN_AREA' => '', //state
         'LOCALITY' => '', //city
         'RECIPIENT' => '', //name
@@ -66,7 +66,7 @@ class Format implements \ArrayAccess
     public function setLocale($locale)
     {
         //Check if we have information for this locale
-        $file = __DIR__ . '/i18n/' . $locale . '.json';
+        $file = __DIR__ . '/i18n/' . strtoupper($locale) . '.json';
         if (file_exists($file)) {
             //Read the locale information from the file
             $meta = json_decode(file_get_contents($file), true);
@@ -113,10 +113,22 @@ class Format implements \ArrayAccess
             } else {
                 $formatted_address = trim(str_replace('%n', "\n", $formatted_address));
             }
-
             return $formatted_address;
         } else {
             throw new LocaleMissingFormatException('Locale missing format');
+        }
+    }
+
+    /**
+     * Sets multiple address attributes.
+     *
+     * @access public
+     * @param  mixed  $attributes
+     * @return void
+     */
+    public function setAttributes($attributes) {
+        foreach ($attributes as $key => $value) {
+            $this->setAttribute($key, $value);
         }
     }
 
