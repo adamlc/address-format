@@ -12,7 +12,7 @@ use Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException;
  */
 class Format implements \ArrayAccess
 {
-    private $locale;
+    protected $locale;
 
     /**
      * This map specifies the content on how to format the address
