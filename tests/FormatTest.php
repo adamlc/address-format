@@ -233,4 +233,63 @@ class FormatTest extends \PHPUnit_Framework_TestCase
 			'Schulstrasse 4'
 		);
     }
+
+    /**
+    * Check that an exception is thrown for validAddressPieces by invlidate locale
+    *
+    * @expectedException Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException
+    * @return void
+    */
+    public function testValidAddressPiecesLocaleMissingFormatException()
+    {
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
+
+        //Set expected Exception
+        $this->setExpectedException('Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException');
+
+        $this->container->validAddressPieces();
+    }
+
+    /**
+     * Test get the ordered adress pieces for this locale
+     *
+     * @return void
+     */
+    public function testValidAddressPieces()
+    {
+    	//Clear any previously set attributes
+    	$this->container->clearAttributes();
+
+        //Set Locale
+	$this->container->setLocale('DE');
+
+	//get the ordered adress pieces for this locale
+	$validAddressPieces = $this->container->validAddressPieces();
+
+	$this->assertEquals(
+		$validAddressPieces[0],
+		"RECIPIENT"
+	);
+
+	$this->assertEquals(
+		$validAddressPieces[1],
+		"ORGANIZATION"
+	);
+
+	$this->assertEquals(
+		$validAddressPieces[2],
+		"STREET_ADDRESS"
+	);
+
+	$this->assertEquals(
+		$validAddressPieces[3],
+		"POSTAL_CODE"
+	);
+
+	$this->assertEquals(
+		$validAddressPieces[4],
+		"LOCALITY"
+	);
+    }
 }
