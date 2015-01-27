@@ -191,4 +191,33 @@ class Format implements \ArrayAccess
             $this->offsetSet($offset, '');
         }
     }
+
+    /**
+     * Return the valid pieces
+     *
+     * @access public
+     * @return array
+     */
+    public function validAddressPieces()
+    {
+        $return = array();
+
+        if (isset($this->locale['fmt']))
+        {
+            $address_format_array = explode("%", $this->locale['fmt']);
+            foreach($address_format_array as $key => $value )
+            {
+                $value = trim($value);
+                if( !empty($value) && isset($this->address_map[$value]) )
+                {
+                    $return[]=$this->address_map[$value];
+                }
+            }
+            return $return;
+        } else {
+            throw new LocaleMissingFormatException('Locale missing format');
+        }
+    }
+
+    
 }
