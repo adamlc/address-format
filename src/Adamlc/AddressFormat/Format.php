@@ -61,7 +61,7 @@ class Format implements \ArrayAccess
      *
      * @access public
      * @param  mixed $locale
-     * @return void
+     * @return boolean
      */
     public function setLocale($locale)
     {
@@ -87,7 +87,7 @@ class Format implements \ArrayAccess
      *
      * @access public
      * @param  bool $html (default: false)
-     * @return void
+     * @return string $formatted_address
      */
     public function formatAddress($html = false)
     {
@@ -145,7 +145,7 @@ class Format implements \ArrayAccess
      *
      * @access public
      * @param  mixed $attribute
-     * @return void
+     * @return string
      */
     public function getAttribute($attribute)
     {
