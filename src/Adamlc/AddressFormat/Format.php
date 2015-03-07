@@ -109,6 +109,7 @@ class Format implements \ArrayAccess
 
             //Replace new lines!
             if ($html) {
+                $formatted_address = htmlentities($formatted_address, ENT_QUOTES, 'UTF-8', false);
                 $formatted_address = str_replace('%n', "\n" . '<br>', $formatted_address);
             } else {
                 $formatted_address = trim(str_replace('%n', "\n", $formatted_address));
