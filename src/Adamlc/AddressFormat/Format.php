@@ -208,7 +208,7 @@ class Format implements \ArrayAccess
             $address_format_array = explode("%", $this->locale['fmt']);
             foreach($address_format_array as $key => $value )
             {
-                $value = trim($value);
+                $value = trim($value, " ,");
                 if( !empty($value) && isset($this->address_map[$value]) )
                 {
                     $return[]=$this->address_map[$value];
