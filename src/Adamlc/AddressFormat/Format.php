@@ -10,9 +10,10 @@ use Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException;
 /**
  * Use this call to format a street address according to different locales
  */
-class Format
+class Format implements \ArrayAccess
 {
 	protected $locale;
+
 
     /**
      * This map specifies the content on how to format the address
@@ -29,12 +30,10 @@ class Format
         'C' => 'LOCALITY', //city
         'N' => 'RECIPIENT', //name
         'O' => 'ORGANIZATION', //organization
-        '1' => 'ADDRESS_LINE_1', //street1
-        '2' => 'ADDRESS_LINE_2', //street1
         'D' => 'DEPENDENT_LOCALITY',
         'Z' => 'POSTAL_CODE',
         'X' => 'SORTING_CODE',
-        'A' => 'STREET_ADDRESS', //Deprecated
+        'A' => 'STREET_ADDRESS',
         'R' => 'COUNTRY'
     );
 
@@ -63,7 +62,7 @@ class Format
      *
      * @access public
      * @param  mixed $locale
-     * @return void
+     * @return boolean
      */
     public function setLocale($locale)
     {
@@ -89,10 +88,9 @@ class Format
      *
      * @access public
      * @param  bool $html (default: false)
-     * @param  bool $condensed (default: false)
-     * @return void
+     * @return string $formatted_address
      */
-    public function formatAddress($html = false, $condensed = false)
+    public function formatAddress($html = false)
     {
         //Check if this locale has a fmt field
         if (isset($this->locale['fmt'])) {
@@ -106,16 +104,16 @@ class Format
                 $formatted_address = str_replace('%' . $key, $this->input_map[$value], $formatted_address);
             }
 
-            //Optionally remove blank lines from the resulting address
-            if ($condensed){
-                $formatted_address = preg_replace('((\%n)+)', '%n', $formatted_address);
-            }
+            //Remove blank lines from the resulting address
+            $formatted_address = preg_replace('((\%n)+)', '%n', $formatted_address);
+
 
             //Replace new lines!
             if ($html) {
+                $formatted_address = htmlentities($formatted_address, ENT_QUOTES, 'UTF-8', false);
                 $formatted_address = str_replace('%n', "\n" . '<br>', $formatted_address);
             } else {
-                $formatted_address = str_replace('%n', "\n", $formatted_address);
+                $formatted_address = trim(str_replace('%n', "\n", $formatted_address));
             }
             return $formatted_address;
         } else {
@@ -161,7 +159,7 @@ class Format
      *
      * @access public
      * @param  mixed $attribute
-     * @return void
+     * @return string
      */
     public function getAttribute($attribute)
     {
@@ -185,4 +183,55 @@ class Format
             $this->input_map[$key] = '';
         }
     }
+    
+    public function offsetExists($offset)
+    {
+        return isset($this->input_map[$offset]);
+    }
+    
+    public function offsetGet($offset)
+    {
+        return $this->getAttribute($offset);
+    }
+    
+    public function offsetSet($offset, $value)
+    {
+        $this->setAttribute($offset, $value);
+    }
+    
+    public function offsetUnset($offset)
+    {
+        if ($this->offsetExists($offset)) {
+            $this->offsetSet($offset, '');
+        }
+    }
+
+    /**
+     * Return the valid pieces
+     *
+     * @access public
+     * @return array
+     */
+    public function validAddressPieces()
+    {
+        $return = array();
+
+        if (isset($this->locale['fmt']))
+        {
+            $address_format_array = explode("%", $this->locale['fmt']);
+            foreach($address_format_array as $key => $value )
+            {
+                $value = trim($value);
+                if( !empty($value) && isset($this->address_map[$value]) )
+                {
+                    $return[]=$this->address_map[$value];
+                }
+            }
+            return $return;
+        } else {
+            throw new LocaleMissingFormatException('Locale missing format');
+        }
+    }
+
+    
 }

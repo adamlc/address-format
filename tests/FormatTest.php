@@ -5,7 +5,7 @@ use Adamlc\AddressFormat\Format;
 class FormatTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Container
+     * @var Adamlc\AddressFormat\Format
      */
     protected $container;
 
@@ -190,5 +190,106 @@ class FormatTest extends \PHPUnit_Framework_TestCase
         $this->setExpectedException('Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException');
 
         $this->container->formatAddress();
+    }
+    
+    /**
+     * Test setting attributes using array access
+     *
+     * @return void
+     */
+    public function testArrayAccess()
+    {
+    	//Clear any previously set attributes
+    	$this->container->clearAttributes();
+
+		$this->container['LOCALITY'] = 'Oyenhausen';
+		$this->container['RECIPIENT'] = 'Eberhard Wellhausen';
+		$this->container['ORGANIZATION'] = 'Wittekindshof';
+		$this->container['POSTAL_CODE'] = '32547';
+		$this->container['STREET_ADDRESS'] = 'Schulstrasse 4';
+
+		$this->assertEquals(
+			$this->container['LOCALITY'],
+			'Oyenhausen'
+		);
+		
+		$this->assertEquals(
+			$this->container['RECIPIENT'],
+			'Eberhard Wellhausen'
+		);
+		
+		$this->assertEquals(
+			$this->container['ORGANIZATION'],
+			'Wittekindshof'
+		);
+		
+		$this->assertEquals(
+			$this->container['POSTAL_CODE'],
+			'32547'
+		);
+		
+		$this->assertEquals(
+			$this->container['STREET_ADDRESS'],
+			'Schulstrasse 4'
+		);
+    }
+
+    /**
+    * Check that an exception is thrown for validAddressPieces by invlidate locale
+    *
+    * @expectedException Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException
+    * @return void
+    */
+    public function testValidAddressPiecesLocaleMissingFormatException()
+    {
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
+
+        //Set expected Exception
+        $this->setExpectedException('Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException');
+
+        $this->container->validAddressPieces();
+    }
+
+    /**
+     * Test get the ordered adress pieces for this locale
+     *
+     * @return void
+     */
+    public function testValidAddressPieces()
+    {
+    	//Clear any previously set attributes
+    	$this->container->clearAttributes();
+
+        //Set Locale
+	$this->container->setLocale('DE');
+
+	//get the ordered adress pieces for this locale
+	$validAddressPieces = $this->container->validAddressPieces();
+
+	$this->assertEquals(
+		$validAddressPieces[0],
+		"RECIPIENT"
+	);
+
+	$this->assertEquals(
+		$validAddressPieces[1],
+		"ORGANIZATION"
+	);
+
+	$this->assertEquals(
+		$validAddressPieces[2],
+		"STREET_ADDRESS"
+	);
+
+	$this->assertEquals(
+		$validAddressPieces[3],
+		"POSTAL_CODE"
+	);
+
+	$this->assertEquals(
+		$validAddressPieces[4],
+		"LOCALITY"
+	);
     }
 }
