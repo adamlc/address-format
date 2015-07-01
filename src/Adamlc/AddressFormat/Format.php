@@ -12,7 +12,7 @@ use Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException;
  */
 class Format implements \ArrayAccess
 {
-	protected $locale;
+    protected $locale;
 
 
     /**
@@ -43,7 +43,7 @@ class Format implements \ArrayAccess
      * @var mixed
      * @access protected
      */
-	protected $input_map = array(
+    protected $input_map = array(
         'ADMIN_AREA' => '', //state
         'LOCALITY' => '', //city
         'RECIPIENT' => '', //name
