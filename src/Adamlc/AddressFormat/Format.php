@@ -100,7 +100,8 @@ class Format implements \ArrayAccess
 
             //Replace the street values
             foreach ($this->address_map as $key => $value) {
-                $formatted_address = str_replace('%' . $key, $this->input_map[$value], $formatted_address);
+                $replacement = empty($this->input_map[$value]) ? '' : $this->input_map[$value];
+                $formatted_address = str_replace('%' . $key, $replacement, $formatted_address);
             }
 
             //Remove blank lines from the resulting address
