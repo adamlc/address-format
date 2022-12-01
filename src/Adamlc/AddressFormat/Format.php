@@ -171,22 +171,26 @@ class Format implements \ArrayAccess
             $this->input_map[$key] = '';
         }
     }
-    
+
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->input_map[$offset]);
     }
-    
+
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->getAttribute($offset);
     }
-    
+
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->setAttribute($offset, $value);
     }
-    
+
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         if ($this->offsetExists($offset)) {
@@ -220,6 +224,4 @@ class Format implements \ArrayAccess
             throw new LocaleMissingFormatException('Locale missing format');
         }
     }
-
-    
 }
