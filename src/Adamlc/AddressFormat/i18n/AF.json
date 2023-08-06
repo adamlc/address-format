@@ -1,1 +1,1 @@
-{"zipex": "1001,2601,3801", "key": "AF", "zip": "\\d{4}", "posturl": "http://afghanpost.gov.af/Postal%20Code/", "id": "data/AF", "name": "AFGHANISTAN"}
+{"id":"data/AF","key":"AF","name":"AFGHANISTAN","fmt":"%N%n%O%n%A%n%C%n%Z","zip":"\\d{4}","zipex":"1001,2601,3801"}

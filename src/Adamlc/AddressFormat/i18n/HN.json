@@ -1,1 +1,1 @@
-{"name": "HONDURAS", "zip": "(?:\\d{5})?", "fmt": "%N%n%O%n%A%n%C, %S%n%Z", "id": "data/HN", "key": "HN", "require": "ACS"}
+{"id":"data/HN","key":"HN","name":"HONDURAS","fmt":"%N%n%O%n%A%n%C, %S%n%Z","require":"ACS","zip":"\\d{5}","zipex":"31301","state_name_type":"department"}

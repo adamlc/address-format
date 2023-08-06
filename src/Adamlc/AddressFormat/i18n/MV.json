@@ -1,1 +1,1 @@
-{"zipex": "20026", "name": "MALDIVES", "zip": "\\d{5}", "fmt": "%N%n%O%n%A%n%C %Z", "key": "MV", "posturl": "http://www.maldivespost.com/?lid=10", "id": "data/MV"}
+{"id":"data/MV","key":"MV","name":"MALDIVES","fmt":"%N%n%O%n%A%n%C %Z","zip":"\\d{5}","zipex":"20026","posturl":"http://www.maldivespost.com/?lid=10"}

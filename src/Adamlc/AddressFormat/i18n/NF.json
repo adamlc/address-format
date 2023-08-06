@@ -1,1 +1,1 @@
-{"upper": "CS", "name": "NORFOLK ISLAND", "zip": "2899", "fmt": "%O%n%N%n%A%n%C %S %Z", "key": "NF", "id": "data/NF"}
+{"id":"data/NF","key":"NF","name":"NORFOLK ISLAND","fmt":"%O%n%N%n%A%n%C %S %Z","upper":"CS","zip":"2899","zipex":"2899"}

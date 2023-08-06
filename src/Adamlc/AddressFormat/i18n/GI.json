@@ -1,1 +1,1 @@
-{"zipex": "GX11 1AA", "name": "GIBRALTAR", "zip": "GX11 1AA", "fmt": "%N%n%O%n%A", "id": "data/GI", "key": "GI", "require": "A"}
+{"id":"data/GI","key":"GI","name":"GIBRALTAR","fmt":"%N%n%O%n%A%nGIBRALTAR%n%Z","require":"A","zip":"GX11 1AA","zipex":"GX11 1AA"}

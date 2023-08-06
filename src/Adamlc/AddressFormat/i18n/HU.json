@@ -1,1 +1,1 @@
-{"upper": "ACNO", "zipex": "1037,2380,1540", "name": "HUNGARY (Rep.)", "zip": "\\d{4}", "fmt": "%N%n%O%n%C%n%A%n%Z", "key": "HU", "posturl": "http://posta.hu/ugyfelszolgalat/iranyitoszam_kereso", "id": "data/HU"}
+{"id":"data/HU","key":"HU","name":"HUNGARY (Rep.)","fmt":"%N%n%O%n%C%n%A%n%Z","require":"ACZ","upper":"ACNO","zip":"\\d{4}","zipex":"1037,2380,1540","posturl":"http://posta.hu/ugyfelszolgalat/iranyitoszam_kereso"}
