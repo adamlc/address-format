@@ -126,7 +126,7 @@ class FormatTest extends \PHPUnit\Framework\TestCase
 
 		$this->assertEquals(
 			$this->container->formatAddress(),
-			"Joe Bloggs\nNovotel London\n173-185 Greenwich High Road\nGreenwich\nLondon\nSE10 8JA"
+			"Joe Bloggs\nNovotel London\n173-185 Greenwich High Road\nGreenwich\nSE10 8JA"
 		);
     }
 
