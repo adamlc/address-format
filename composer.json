@@ -11,6 +11,9 @@
     "require-dev": {
         "phpunit/phpunit": "^9.0"
     },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "autoload" : {
         "psr-0" : {
             "Adamlc\\AddressFormat": "src/"
