@@ -1,1 +1,1 @@
-{"upper": "ACX", "zipex": "97600", "name": "MAYOTTE", "zip": "976\\d{2}", "fmt": "%O%n%N%n%A%n%Z %C %X", "id": "data/YT", "key": "YT", "require": "ACZ"}
+{"id":"data/YT","key":"YT","name":"MAYOTTE","fmt":"%O%n%N%n%A%n%Z %C %X","require":"ACZ","upper":"ACX","zip":"976\\d{2}","zipex":"97600"}

@@ -1,1 +1,1 @@
-{"id": "data/NA", "key": "NA", "name": "NAMIBIA"}
+{"id":"data/NA","key":"NA","name":"NAMIBIA","fmt":"%N%n%O%n%A%n%C%n%Z","zip":"\\d{5}","zipex":"10001,10017"}

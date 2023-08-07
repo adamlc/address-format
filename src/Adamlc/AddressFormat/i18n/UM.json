@@ -1,1 +1,1 @@
-{"upper": "ACNOS", "zipex": "96898", "name": "UNITED STATES MINOR OUTLYING ISLANDS", "zip": "96898", "zip_name_type": "zip", "fmt": "%N%n%O%n%A%n%C %S %Z", "posturl": "http://zip4.usps.com/zip4/welcome.jsp", "state_name_type": "state", "key": "UM", "require": "ACS", "id": "data/UM"}
+{"id":"data/UM","key":"UM","name":"UNITED STATES MINOR OUTLYING ISLANDS","fmt":"%N%n%O%n%A%n%C %S %Z","require":"ACS","upper":"ACNOS","zip":"96898","zipex":"96898","posturl":"http://zip4.usps.com/zip4/welcome.jsp","zip_name_type":"zip","state_name_type":"state"}

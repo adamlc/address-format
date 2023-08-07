@@ -1,1 +1,1 @@
-{"zipex": "0101", "name": "GEORGIA", "zip": "\\d{4}", "fmt": "%N%n%O%n%A%n%Z %C", "key": "GE", "posturl": "http://www.georgianpost.ge/index.php?page=10", "id": "data/GE"}
+{"id":"data/GE","key":"GE","name":"GEORGIA","fmt":"%N%n%O%n%A%n%Z %C","zip":"\\d{4}","zipex":"0101","posturl":"http://www.georgianpost.ge/index.php?page=10"}

@@ -1,1 +1,1 @@
-{"zipex": "71000", "name": "BOSNIA AND HERZEGOVINA", "zip": "\\d{5}", "fmt": "%N%n%O%n%A%n%Z %C", "key": "BA", "posturl": "http://www.post.ba/postanski_brojevi.php", "id": "data/BA"}
+{"id":"data/BA","key":"BA","name":"BOSNIA AND HERZEGOVINA","fmt":"%N%n%O%n%A%n%Z %C","zip":"\\d{5}","zipex":"71000"}

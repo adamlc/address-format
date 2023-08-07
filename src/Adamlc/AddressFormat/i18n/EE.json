@@ -1,1 +1,1 @@
-{"zipex": "69501,11212,1001", "name": "ESTONIA", "zip": "\\d{5}", "fmt": "%N%n%O%n%A%n%Z %C", "key": "EE", "posturl": "http://www.post.ee/?op=sihtnumbriotsing", "id": "data/EE"}
+{"id":"data/EE","key":"EE","name":"ESTONIA","fmt":"%N%n%O%n%A%n%Z %C %S","require":"ACZ","zip":"\\d{5}","zipex":"69501,11212","posturl":"https://www.omniva.ee/era/sihtnumbrite_otsing"}

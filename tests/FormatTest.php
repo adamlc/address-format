@@ -2,7 +2,7 @@
 
 use Adamlc\AddressFormat\Format;
 
-class FormatTest extends \PHPUnit_Framework_TestCase
+class FormatTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var Adamlc\AddressFormat\Format
@@ -14,7 +14,7 @@ class FormatTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->container = new Format;
     }
@@ -34,23 +34,23 @@ class FormatTest extends \PHPUnit_Framework_TestCase
     /**
      * Test setting an invalid locale
      *
-     * @expectedException Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException
      * @return void
      */
     public function testSettingInvalidLocale()
     {
-		$this->container->setLocale('FOO');
+        $this->expectException(Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException::class);
+        $this->container->setLocale('FOO');
     }
 
     /**
      * Test setting an invalid locale
      *
-     * @expectedException Adamlc\AddressFormat\Exceptions\LocaleParseErrorException
      * @return void
      */
     public function testLocaleWithInvalidMetaData()
     {
-		$this->container->setLocale('Test');
+        $this->expectException(Adamlc\AddressFormat\Exceptions\LocaleParseErrorException::class);
+        $this->container->setLocale('Test');
     }
 
     /**
@@ -69,12 +69,12 @@ class FormatTest extends \PHPUnit_Framework_TestCase
     /**
      * Test setting an invalid attribute
      *
-     * @expectedException Adamlc\AddressFormat\Exceptions\AttributeInvalidException
      * @return void
      */
     public function testSetAttributeWithInvalidAttribute()
     {
-		$this->container->setAttribute('PLACE_OF_FOO', 'Foo Land');
+        $this->expectException(Adamlc\AddressFormat\Exceptions\AttributeInvalidException::class);
+        $this->container->setAttribute('PLACE_OF_FOO', 'Foo Land');
     }
 
     /**
@@ -95,12 +95,12 @@ class FormatTest extends \PHPUnit_Framework_TestCase
     /**
      * Test getting an invalid attribute
      *
-     * @expectedException Adamlc\AddressFormat\Exceptions\AttributeInvalidException
      * @return void
      */
     public function testGetAttributeWithInvalidAttribute()
     {
-		$this->container->getAttribute('PLACE_OF_FOO');
+        $this->expectException(Adamlc\AddressFormat\Exceptions\AttributeInvalidException::class);
+        $this->container->getAttribute('PLACE_OF_FOO');
     }
 
     /**
@@ -126,7 +126,7 @@ class FormatTest extends \PHPUnit_Framework_TestCase
 
 		$this->assertEquals(
 			$this->container->formatAddress(),
-			"Joe Bloggs\nNovotel London\n173-185 Greenwich High Road\nGreenwich\nLondon\nSE10 8JA"
+			"Joe Bloggs\nNovotel London\n173-185 Greenwich High Road\nGreenwich\nSE10 8JA"
 		);
     }
 
@@ -158,11 +158,11 @@ class FormatTest extends \PHPUnit_Framework_TestCase
     /**
      * Check that an exception is thrown for invlidate locale
      *
-     * @expectedException Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException
      * @return void
      */
     public function testUnsupportedLocaleThrowsException()
     {
+        $this->expectException(Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException::class);
         //Clear any previously set attributes
         $this->container->clearAttributes();
 
@@ -178,7 +178,6 @@ class FormatTest extends \PHPUnit_Framework_TestCase
     /**
      * Check that an exception is thrown for invlidate locale
      *
-     * @expectedException Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException
      * @return void
      */
     public function testNotGivenFormatThrowsException()
@@ -187,11 +186,11 @@ class FormatTest extends \PHPUnit_Framework_TestCase
         $this->container->clearAttributes();
 
         //Set expected Exception
-        $this->setExpectedException('Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException');
+        $this->expectException(Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException::class);
 
         $this->container->formatAddress();
     }
-    
+
     /**
      * Test setting attributes using array access
      *
@@ -212,22 +211,22 @@ class FormatTest extends \PHPUnit_Framework_TestCase
 			$this->container['LOCALITY'],
 			'Oyenhausen'
 		);
-		
+
 		$this->assertEquals(
 			$this->container['RECIPIENT'],
 			'Eberhard Wellhausen'
 		);
-		
+
 		$this->assertEquals(
 			$this->container['ORGANIZATION'],
 			'Wittekindshof'
 		);
-		
+
 		$this->assertEquals(
 			$this->container['POSTAL_CODE'],
 			'32547'
 		);
-		
+
 		$this->assertEquals(
 			$this->container['STREET_ADDRESS'],
 			'Schulstrasse 4'
@@ -237,7 +236,6 @@ class FormatTest extends \PHPUnit_Framework_TestCase
     /**
     * Check that an exception is thrown for validAddressPieces by invlidate locale
     *
-    * @expectedException Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException
     * @return void
     */
     public function testValidAddressPiecesLocaleMissingFormatException()
@@ -245,8 +243,7 @@ class FormatTest extends \PHPUnit_Framework_TestCase
         //Clear any previously set attributes
         $this->container->clearAttributes();
 
-        //Set expected Exception
-        $this->setExpectedException('Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException');
+        $this->expectException(Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException::class);
 
         $this->container->validAddressPieces();
     }

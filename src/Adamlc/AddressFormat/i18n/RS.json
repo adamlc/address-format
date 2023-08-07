@@ -1,1 +1,1 @@
-{"zipex": "106314", "name": "REPUBLIC OF SERBIA", "zip": "\\d{5,6}", "fmt": "%N%n%O%n%A%n%Z %C", "key": "RS", "posturl": "http://www.posta.rs/struktura/lat/aplikacije/pronadji/nadji-postu.asp", "id": "data/RS"}
+{"id":"data/RS","key":"RS","name":"REPUBLIC OF SERBIA","fmt":"%N%n%O%n%A%n%Z %C","zip":"\\d{5,6}","zipex":"106314","posturl":"http://www.posta.rs/struktura/lat/aplikacije/pronadji/nadji-postu.asp"}

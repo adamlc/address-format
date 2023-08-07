@@ -1,1 +1,1 @@
-{"upper": "CS", "zipex": "702100,700000", "name": "UZBEKISTAN", "zip": "\\d{6}", "fmt": "%N%n%O%n%A%n%Z %C%n%S", "key": "UZ", "posturl": "http://www.pochta.uz/index.php/uz/pochta-indekslari/9", "id": "data/UZ"}
+{"id":"data/UZ","key":"UZ","name":"UZBEKISTAN","fmt":"%N%n%O%n%A%n%Z %C%n%S","upper":"CS","zip":"\\d{6}","zipex":"702100,700000","posturl":"http://www.pochta.uz/ru/uslugi/indexsearch.html"}

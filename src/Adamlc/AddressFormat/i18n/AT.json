@@ -1,1 +1,1 @@
-{"zipex": "1010,3741", "name": "AUSTRIA", "zip": "\\d{4}", "fmt": "%O%n%N%n%A%n%Z %C", "id": "data/AT", "key": "AT", "posturl": "http://www.post.at/post_subsite_postleitzahlfinder.php", "require": "ACZ"}
+{"id":"data/AT","key":"AT","name":"AUSTRIA","fmt":"%O%n%N%n%A%n%Z %C","require":"ACZ","zip":"\\d{4}","zipex":"1010,3741","posturl":"http://www.post.at/post_subsite_postleitzahlfinder.php"}

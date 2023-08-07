@@ -10,12 +10,12 @@ class PopulateLocales
     /**
      * Locale Data URL - this is used to parse the list of available countries
      *
-     * (default value: 'http://i18napis.appspot.com/address/data')
+     * (default value: 'https://chromium-i18n.appspot.com/ssl-address/data')
      *
      * @var string
      * @access private
      */
-    private $locale_data_url = 'http://i18napis.appspot.com/address/data';
+    private $locale_data_url = 'https://chromium-i18n.appspot.com/ssl-address/data';
 
     /**
      * Function to fetch data from Google API and populate local files.

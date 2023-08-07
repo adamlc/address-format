@@ -1,1 +1,1 @@
-{"postprefix": "L-", "zipex": "4750,2998", "name": "LUXEMBOURG", "zip": "\\d{4}", "fmt": "%O%n%N%n%A%nL-%Z %C", "require": "ACZ", "key": "LU", "posturl": "http://www.pt.lu/portal/services_en_ligne/recherche_codes_postaux", "id": "data/LU"}
+{"id":"data/LU","key":"LU","name":"LUXEMBOURG","fmt":"%O%n%N%n%A%nL-%Z %C","require":"ACZ","zip":"\\d{4}","zipex":"4750,2998","posturl":"https://www.post.lu/fr/grandes-entreprises/solutions-postales/rechercher-un-code-postal","postprefix":"L-"}

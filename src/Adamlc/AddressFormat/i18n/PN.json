@@ -1,1 +1,1 @@
-{"upper": "CZ", "zipex": "PCRN 1ZZ", "name": "PITCAIRN", "zip": "PCRN 1ZZ", "fmt": "%N%n%O%n%A%n%X%n%C%n%Z", "id": "data/PN", "key": "PN", "require": "ACZ"}
+{"id":"data/PN","key":"PN","name":"PITCAIRN","fmt":"%N%n%O%n%A%n%C%n%Z","require":"ACZ","upper":"CZ","zip":"PCRN 1ZZ","zipex":"PCRN 1ZZ"}
