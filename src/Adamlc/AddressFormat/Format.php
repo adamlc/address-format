@@ -107,6 +107,8 @@ class Format implements \ArrayAccess
             //Remove blank lines from the resulting address
             $formatted_address = preg_replace('((\%n)+)', '%n', $formatted_address);
 
+            //Remove %n in front and back of string
+            $formatted_address = trim($formatted_address, '%n');
 
             //Replace new lines!
             if ($html) {
