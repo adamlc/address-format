@@ -175,8 +175,7 @@ class FormatTest extends \PHPUnit\Framework\TestCase
 	$this->container->setAttribute('STREET_ADDRESS', 'Schulstrasse 4');
 
 	$this->assertEquals(
-		$this->container->formatAddress(),
-		"Schulstrasse 4\n32547 Oyenhausen"
+		$this->container->formatAddress(), "Schulstrasse 4\n32547 Oyenhausen"
 	);
     }
 
