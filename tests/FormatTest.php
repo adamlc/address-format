@@ -156,6 +156,31 @@ class FormatTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Check the format of a DE address is expected even when missing attributes
+     *
+     * @return void
+     */
+    public function testDeAddressFormatWithMissingAttributes()
+    {
+    	//Clear any previously set attributes
+    	$this->container->clearAttributes();
+
+    	//Set Locale and attributes
+	$this->container->setLocale('DE');
+
+	$this->container->setAttribute('LOCALITY', 'Oyenhausen');
+	$this->container->setAttribute('RECIPIENT', '');
+	$this->container->setAttribute('ORGANIZATION', '');
+	$this->container->setAttribute('POSTAL_CODE', '32547');
+	$this->container->setAttribute('STREET_ADDRESS', 'Schulstrasse 4');
+
+	$this->assertEquals(
+		$this->container->formatAddress(),
+		"Schulstrasse 4\n32547 Oyenhausen"
+	);
+    }
+
+    /**
      * Check that an exception is thrown for invlidate locale
      *
      * @return void
