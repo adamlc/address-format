@@ -100,15 +100,19 @@ class Format implements \ArrayAccess
 
             //Replace the street values
             foreach ($this->address_map as $key => $value) {
-                $replacement = empty($this->input_map[$value]) ? '' : $this->input_map[$value];
-                $formatted_address = str_replace('%' . $key, $replacement, $formatted_address);
+                if( empty( $this->input_map[$value] ) ) {
+                    $key = '%' . $key . '%n'; // Also remove the %n newline otherwise it's being left there
+                    $replacement = '';
+                } else {
+                    $key = '%' . $key;
+                    $replacement = $this->input_map[$value];
+                }
+
+                $formatted_address = str_replace($key, $replacement, $formatted_address);
             }
 
             //Remove blank lines from the resulting address
             $formatted_address = preg_replace('((\%n)+)', '%n', $formatted_address);
-
-            //Remove %n in front and back of string
-            $formatted_address = trim($formatted_address, '%n');
 
             //Replace new lines!
             if ($html) {
