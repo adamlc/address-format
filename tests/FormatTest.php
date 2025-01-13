@@ -162,21 +162,21 @@ class FormatTest extends \PHPUnit\Framework\TestCase
      */
     public function testDeAddressFormatWithMissingAttributes()
     {
-    	//Clear any previously set attributes
-    	$this->container->clearAttributes();
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
 
-    	//Set Locale and attributes
-	$this->container->setLocale('DE');
+        //Set Locale and attributes
+        $this->container->setLocale('DE');
 
-	$this->container->setAttribute('LOCALITY', 'Oyenhausen');
-	$this->container->setAttribute('RECIPIENT', '');
-	$this->container->setAttribute('ORGANIZATION', '');
-	$this->container->setAttribute('POSTAL_CODE', '32547');
-	$this->container->setAttribute('STREET_ADDRESS', 'Schulstrasse 4');
+        $this->container->setAttribute('LOCALITY', 'Oyenhausen');
+        $this->container->setAttribute('RECIPIENT', '');
+        $this->container->setAttribute('ORGANIZATION', '');
+        $this->container->setAttribute('POSTAL_CODE', '32547');
+        $this->container->setAttribute('STREET_ADDRESS', 'Schulstrasse 4');
 
-	$this->assertEquals(
-		$this->container->formatAddress(), "Schulstrasse 4\n32547 Oyenhausen"
-	);
+        $this->assertEquals(
+            $this->container->formatAddress(), "Schulstrasse 4\n32547 Oyenhausen"
+        );
     }
 
     /**
