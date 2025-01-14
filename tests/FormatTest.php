@@ -60,10 +60,10 @@ class FormatTest extends \PHPUnit\Framework\TestCase
      */
     public function testSetAttributeWithValidAttribute()
     {
-		$this->assertEquals(
-			$this->container->setAttribute('ADMIN_AREA', 'Foo Land'),
-			'Foo Land'
-		);
+        $this->assertEquals(
+            $this->container->setAttribute('ADMIN_AREA', 'Foo Land'),
+            'Foo Land'
+        );
     }
 
     /**
@@ -84,12 +84,12 @@ class FormatTest extends \PHPUnit\Framework\TestCase
      */
     public function testGetAttributeWithValidAttribute()
     {
-    	$this->container->setAttribute('ADMIN_AREA', 'Foo Land');
+        $this->container->setAttribute('ADMIN_AREA', 'Foo Land');
 
-		$this->assertEquals(
-			$this->container->getAttribute('ADMIN_AREA'),
-			'Foo Land'
-		);
+        $this->assertEquals(
+            $this->container->getAttribute('ADMIN_AREA'),
+            'Foo Land'
+        );
     }
 
     /**
@@ -110,24 +110,24 @@ class FormatTest extends \PHPUnit\Framework\TestCase
      */
     public function testGbAddressFormat()
     {
-    	//Clear any previously set attributes
-    	$this->container->clearAttributes();
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
 
-    	//Set Locale and attributes
-		$this->container->setLocale('GB');
+        //Set Locale and attributes
+        $this->container->setLocale('GB');
 
-		$this->container->setAttribute('ADMIN_AREA', 'London');
-		$this->container->setAttribute('LOCALITY', 'Greenwich');
-		$this->container->setAttribute('RECIPIENT', 'Joe Bloggs');
-		$this->container->setAttribute('ORGANIZATION', 'Novotel London');
-		$this->container->setAttribute('POSTAL_CODE', 'SE10 8JA');
-		$this->container->setAttribute('STREET_ADDRESS', '173-185 Greenwich High Road');
-		$this->container->setAttribute('COUNTRY', 'United Kingdom');
+        $this->container->setAttribute('ADMIN_AREA', 'London');
+        $this->container->setAttribute('LOCALITY', 'Greenwich');
+        $this->container->setAttribute('RECIPIENT', 'Joe Bloggs');
+        $this->container->setAttribute('ORGANIZATION', 'Novotel London');
+        $this->container->setAttribute('POSTAL_CODE', 'SE10 8JA');
+        $this->container->setAttribute('STREET_ADDRESS', '173-185 Greenwich High Road');
+        $this->container->setAttribute('COUNTRY', 'United Kingdom');
 
-		$this->assertEquals(
-			$this->container->formatAddress(),
-			"Joe Bloggs\nNovotel London\n173-185 Greenwich High Road\nGreenwich\nSE10 8JA"
-		);
+        $this->assertEquals(
+            $this->container->formatAddress(),
+            "Joe Bloggs\nNovotel London\n173-185 Greenwich High Road\nGreenwich\nSE10 8JA"
+        );
     }
 
     /**
@@ -137,22 +137,47 @@ class FormatTest extends \PHPUnit\Framework\TestCase
      */
     public function testDeAddressFormat()
     {
-    	//Clear any previously set attributes
-    	$this->container->clearAttributes();
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
 
-    	//Set Locale and attributes
-		$this->container->setLocale('DE');
+        //Set Locale and attributes
+        $this->container->setLocale('DE');
 
-		$this->container->setAttribute('LOCALITY', 'Oyenhausen');
-		$this->container->setAttribute('RECIPIENT', 'Eberhard Wellhausen');
-		$this->container->setAttribute('ORGANIZATION', 'Wittekindshof');
-		$this->container->setAttribute('POSTAL_CODE', '32547');
-		$this->container->setAttribute('STREET_ADDRESS', 'Schulstrasse 4');
+        $this->container->setAttribute('LOCALITY', 'Oyenhausen');
+        $this->container->setAttribute('RECIPIENT', 'Eberhard Wellhausen');
+        $this->container->setAttribute('ORGANIZATION', 'Wittekindshof');
+        $this->container->setAttribute('POSTAL_CODE', '32547');
+        $this->container->setAttribute('STREET_ADDRESS', 'Schulstrasse 4');
 
-		$this->assertEquals(
-			$this->container->formatAddress(),
-			"Eberhard Wellhausen\nWittekindshof\nSchulstrasse 4\n32547 Oyenhausen"
-		);
+        $this->assertEquals(
+            $this->container->formatAddress(),
+            "Eberhard Wellhausen\nWittekindshof\nSchulstrasse 4\n32547 Oyenhausen"
+        );
+    }
+
+    /**
+     * Check the format of a DE address is expected even when missing attributes
+     *
+     * @return void
+     */
+    public function testDeAddressFormatWithMissingAttributes()
+    {
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
+
+        //Set Locale and attributes
+        $this->container->setLocale('DE');
+
+        $this->container->setAttribute('LOCALITY', 'Oyenhausen');
+        $this->container->setAttribute('RECIPIENT', '');
+        $this->container->setAttribute('ORGANIZATION', '');
+        $this->container->setAttribute('POSTAL_CODE', '32547');
+        $this->container->setAttribute('STREET_ADDRESS', 'Schulstrasse 4');
+
+        $this->assertEquals(
+            $this->container->formatAddress(),
+            "Schulstrasse 4\n32547 Oyenhausen"
+        );
     }
 
     /**
@@ -198,39 +223,39 @@ class FormatTest extends \PHPUnit\Framework\TestCase
      */
     public function testArrayAccess()
     {
-    	//Clear any previously set attributes
-    	$this->container->clearAttributes();
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
 
-		$this->container['LOCALITY'] = 'Oyenhausen';
-		$this->container['RECIPIENT'] = 'Eberhard Wellhausen';
-		$this->container['ORGANIZATION'] = 'Wittekindshof';
-		$this->container['POSTAL_CODE'] = '32547';
-		$this->container['STREET_ADDRESS'] = 'Schulstrasse 4';
+        $this->container['LOCALITY'] = 'Oyenhausen';
+        $this->container['RECIPIENT'] = 'Eberhard Wellhausen';
+        $this->container['ORGANIZATION'] = 'Wittekindshof';
+        $this->container['POSTAL_CODE'] = '32547';
+        $this->container['STREET_ADDRESS'] = 'Schulstrasse 4';
 
-		$this->assertEquals(
-			$this->container['LOCALITY'],
-			'Oyenhausen'
-		);
+        $this->assertEquals(
+            $this->container['LOCALITY'],
+            'Oyenhausen'
+        );
 
-		$this->assertEquals(
-			$this->container['RECIPIENT'],
-			'Eberhard Wellhausen'
-		);
+        $this->assertEquals(
+            $this->container['RECIPIENT'],
+            'Eberhard Wellhausen'
+        );
 
-		$this->assertEquals(
-			$this->container['ORGANIZATION'],
-			'Wittekindshof'
-		);
+        $this->assertEquals(
+            $this->container['ORGANIZATION'],
+            'Wittekindshof'
+        );
 
-		$this->assertEquals(
-			$this->container['POSTAL_CODE'],
-			'32547'
-		);
+        $this->assertEquals(
+            $this->container['POSTAL_CODE'],
+            '32547'
+        );
 
-		$this->assertEquals(
-			$this->container['STREET_ADDRESS'],
-			'Schulstrasse 4'
-		);
+        $this->assertEquals(
+            $this->container['STREET_ADDRESS'],
+            'Schulstrasse 4'
+        );
     }
 
     /**
@@ -255,38 +280,38 @@ class FormatTest extends \PHPUnit\Framework\TestCase
      */
     public function testValidAddressPieces()
     {
-    	//Clear any previously set attributes
-    	$this->container->clearAttributes();
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
 
         //Set Locale
-	$this->container->setLocale('DE');
+        $this->container->setLocale('DE');
 
-	//get the ordered adress pieces for this locale
-	$validAddressPieces = $this->container->validAddressPieces();
+        //get the ordered adress pieces for this locale
+        $validAddressPieces = $this->container->validAddressPieces();
 
-	$this->assertEquals(
-		$validAddressPieces[0],
-		"RECIPIENT"
-	);
+        $this->assertEquals(
+            $validAddressPieces[0],
+            "RECIPIENT"
+        );
 
-	$this->assertEquals(
-		$validAddressPieces[1],
-		"ORGANIZATION"
-	);
+        $this->assertEquals(
+            $validAddressPieces[1],
+            "ORGANIZATION"
+        );
 
-	$this->assertEquals(
-		$validAddressPieces[2],
-		"STREET_ADDRESS"
-	);
+        $this->assertEquals(
+            $validAddressPieces[2],
+            "STREET_ADDRESS"
+        );
 
-	$this->assertEquals(
-		$validAddressPieces[3],
-		"POSTAL_CODE"
-	);
+        $this->assertEquals(
+            $validAddressPieces[3],
+            "POSTAL_CODE"
+        );
 
-	$this->assertEquals(
-		$validAddressPieces[4],
-		"LOCALITY"
-	);
+        $this->assertEquals(
+            $validAddressPieces[4],
+            "LOCALITY"
+        );
     }
 }
