@@ -181,6 +181,31 @@ class FormatTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Ensure that addresses doesn't leave markers hanging
+     *
+     * @return void
+     */
+    public function testSpanishAddressDoesntLeaveMarkersHanging()
+    {
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
+
+        //Set Locale and attributes
+        $this->container->setLocale('es');
+
+        $this->container->setAttribute('LOCALITY', 'Girona');
+        $this->container->setAttribute('RECIPIENT', 'Jesper Jacobsen');
+        $this->container->setAttribute('POSTAL_CODE', '17001');
+        $this->container->setAttribute('STREET_ADDRESS', 'Gran Via De Jaume X, 123');
+
+        $this->assertEquals(
+            "Jesper Jacobsen\nGran Via De Jaume X, 123\n17001 Girona",
+            $this->container->formatAddress()
+        );
+    }
+
+
+    /**
      * Check that an exception is thrown for invlidate locale
      *
      * @return void
