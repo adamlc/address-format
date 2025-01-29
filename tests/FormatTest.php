@@ -204,6 +204,30 @@ class FormatTest extends \PHPUnit\Framework\TestCase
         );
     }
 
+    /**
+     * Ensure that addresses doesn't contain excess spaces
+     *
+     * @return void
+     */
+    public function testAddressDoesntContainExcessSpaces()
+    {
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
+
+        //Set Locale and attributes
+        $this->container->setLocale('es');
+
+        $this->container->setAttribute('LOCALITY', 'Girona');
+        $this->container->setAttribute('RECIPIENT', 'Jesper Jacobsen');
+        $this->container->setAttribute('POSTAL_CODE', '');
+        $this->container->setAttribute('STREET_ADDRESS', 'Gran Via De Jaume X, 123');
+
+        $this->assertEquals(
+            "Jesper Jacobsen\nGran Via De Jaume X, 123\nGirona",
+            $this->container->formatAddress()
+        );
+    }
+
 
     /**
      * Check that an exception is thrown for invlidate locale
