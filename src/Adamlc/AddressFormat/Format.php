@@ -67,6 +67,7 @@ class Format implements \ArrayAccess
     public function setLocale($locale)
     {
         //Check if we have information for this locale
+        $locale = strtoupper($locale);
         $file = __DIR__ . '/i18n/' . $locale . '.json';
         if (file_exists($file)) {
             //Read the locale information from the file
