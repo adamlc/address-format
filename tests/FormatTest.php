@@ -50,7 +50,7 @@ class FormatTest extends \PHPUnit\Framework\TestCase
     public function testLocaleWithInvalidMetaData()
     {
         $this->expectException(Adamlc\AddressFormat\Exceptions\LocaleParseErrorException::class);
-        $this->container->setLocale('Test');
+        $this->container->setLocale('_Invalid');
     }
 
     /**
