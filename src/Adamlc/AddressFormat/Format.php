@@ -6,6 +6,7 @@ use Adamlc\AddressFormat\Exceptions\AttributeInvalidException;
 use Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException;
 use Adamlc\AddressFormat\Exceptions\LocaleParseErrorException;
 use Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException;
+use function explode;
 
 /**
  * Use this call to format a street address according to different locales
@@ -66,6 +67,7 @@ class Format implements \ArrayAccess
     public function setLocale($locale)
     {
         //Check if we have information for this locale
+        $locale = strtoupper($locale);
         $file = __DIR__ . '/i18n/' . $locale . '.json';
         if (file_exists($file)) {
             //Read the locale information from the file
@@ -100,15 +102,7 @@ class Format implements \ArrayAccess
 
             //Replace the street values
             foreach ($this->address_map as $key => $value) {
-                if( empty( $this->input_map[$value] ) ) {
-                    $key = '%' . $key . '%n'; // Also remove the %n newline otherwise it's being left there
-                    $replacement = '';
-                } else {
-                    $key = '%' . $key;
-                    $replacement = $this->input_map[$value];
-                }
-
-                $formatted_address = str_replace($key, $replacement, $formatted_address);
+                $formatted_address = str_replace('%' . $key, $this->input_map[$value] ?: '', $formatted_address);
             }
 
             //Remove blank lines from the resulting address
@@ -119,13 +113,35 @@ class Format implements \ArrayAccess
                 $formatted_address = htmlentities($formatted_address, ENT_QUOTES, 'UTF-8', false);
                 $formatted_address = str_replace('%n', "\n" . '<br>', $formatted_address);
             } else {
-                $formatted_address = trim(str_replace('%n', "\n", $formatted_address));
+                $formatted_address = str_replace('%n', "\n", $formatted_address);
             }
 
-            return $formatted_address;
+            return $this->normalize($formatted_address, $html);
         } else {
             throw new LocaleMissingFormatException('Locale missing format');
         }
+    }
+
+    /**
+     * Normalize the whitespace within the address
+     *
+     * @param string $address
+     * @param bool $html
+     *
+     * @return string
+     */
+    protected function normalize($address, $html = false)
+    {
+        $separator = $html ? '<br>' : "\n";
+        $parts = explode($separator, $address);
+
+        $parts = array_filter($parts, 'strlen');
+        $parts = array_map('trim', $parts);
+
+        $address = implode($separator, $parts);
+
+        // Remove multiple spaces
+        return preg_replace('/ +/', ' ', $address);
     }
 
     /**

@@ -50,7 +50,7 @@ class FormatTest extends \PHPUnit\Framework\TestCase
     public function testLocaleWithInvalidMetaData()
     {
         $this->expectException(Adamlc\AddressFormat\Exceptions\LocaleParseErrorException::class);
-        $this->container->setLocale('Test');
+        $this->container->setLocale('_Invalid');
     }
 
     /**
@@ -179,6 +179,55 @@ class FormatTest extends \PHPUnit\Framework\TestCase
             "Schulstrasse 4\n32547 Oyenhausen"
         );
     }
+
+    /**
+     * Ensure that addresses doesn't leave markers hanging
+     *
+     * @return void
+     */
+    public function testSpanishAddressDoesntLeaveMarkersHanging()
+    {
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
+
+        //Set Locale and attributes
+        $this->container->setLocale('es');
+
+        $this->container->setAttribute('LOCALITY', 'Girona');
+        $this->container->setAttribute('RECIPIENT', 'Jesper Jacobsen');
+        $this->container->setAttribute('POSTAL_CODE', '17001');
+        $this->container->setAttribute('STREET_ADDRESS', 'Gran Via De Jaume X, 123');
+
+        $this->assertEquals(
+            "Jesper Jacobsen\nGran Via De Jaume X, 123\n17001 Girona",
+            $this->container->formatAddress()
+        );
+    }
+
+    /**
+     * Ensure that addresses doesn't contain excess spaces
+     *
+     * @return void
+     */
+    public function testAddressDoesntContainExcessSpaces()
+    {
+        //Clear any previously set attributes
+        $this->container->clearAttributes();
+
+        //Set Locale and attributes
+        $this->container->setLocale('es');
+
+        $this->container->setAttribute('LOCALITY', 'Girona');
+        $this->container->setAttribute('RECIPIENT', 'Jesper Jacobsen');
+        $this->container->setAttribute('POSTAL_CODE', '');
+        $this->container->setAttribute('STREET_ADDRESS', 'Gran Via De Jaume X, 123');
+
+        $this->assertEquals(
+            "Jesper Jacobsen\nGran Via De Jaume X, 123\nGirona",
+            $this->container->formatAddress()
+        );
+    }
+
 
     /**
      * Check that an exception is thrown for invlidate locale
