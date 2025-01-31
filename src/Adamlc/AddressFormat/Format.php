@@ -6,7 +6,9 @@ use Adamlc\AddressFormat\Exceptions\AttributeInvalidException;
 use Adamlc\AddressFormat\Exceptions\LocaleNotSupportedException;
 use Adamlc\AddressFormat\Exceptions\LocaleParseErrorException;
 use Adamlc\AddressFormat\Exceptions\LocaleMissingFormatException;
+use function array_filter;
 use function explode;
+use function trim;
 
 /**
  * Use this call to format a street address according to different locales
@@ -135,7 +137,9 @@ class Format implements \ArrayAccess
         $separator = $html ? '<br>' : "\n";
         $parts = explode($separator, $address);
 
-        $parts = array_filter($parts, 'strlen');
+        $parts = array_filter($parts, function ($part) {
+            return ! empty(trim($part));
+        });
         $parts = array_map('trim', $parts);
 
         $address = implode($separator, $parts);
