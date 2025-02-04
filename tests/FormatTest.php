@@ -54,6 +54,29 @@ class FormatTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test setting a single attribute
+     *
+     * @return void
+     */
+    public function testSettingASingleAttribute()
+    {
+        $this->container->clearAttributes();
+        $this->container->setLocale('ES');
+
+        $this->container->setAttribute('RECIPIENT', '');
+        $this->container->setAttribute('ORGANIZATION', '');
+        $this->container->setAttribute('STREET_ADDRESS', '');
+        $this->container->setAttribute('POSTAL_CODE', '');
+        $this->container->setAttribute('LOCALITY', '');
+        $this->container->setAttribute('RECIPIENT', 'Jesper Jacobsen');
+
+        $this->assertEquals(
+            $this->container->formatAddress(),
+            "Jesper Jacobsen"
+        );
+    }
+
+    /**
      * Test setting a valid attribute
      *
      * @return void
@@ -308,10 +331,10 @@ class FormatTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-    * Check that an exception is thrown for validAddressPieces by invlidate locale
-    *
-    * @return void
-    */
+     * Check that an exception is thrown for validAddressPieces by invlidate locale
+     *
+     * @return void
+     */
     public function testValidAddressPiecesLocaleMissingFormatException()
     {
         //Clear any previously set attributes
